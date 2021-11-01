@@ -23,7 +23,7 @@ class SpotifyModel(PlaylistModel):
         self.man = spotify = spotipy.Spotify(
             auth_manager=SpotifyOAuth(
                 scope="playlist-modify-public",
-                redirect_uri="https://example.com",
+                redirect_uri="https://guile.ga",
                 client_id=os.environ["SPOTIPY_CLIENT_ID"],
                 client_secret=os.environ["SPOTIPY_CLIENT_SECRET"],
                 show_dialog=True,

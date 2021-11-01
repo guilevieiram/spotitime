@@ -3,7 +3,7 @@ from model.playlist_model import PlaylistModel, SpotifyModel
 from controller.controller import Controller, TerminalController, FlaskController
 
 def main() -> None:
-    FlaskController(
+    TerminalController(
         ranks_model=BillboardModel(),
         playlist_model=SpotifyModel()
     ).run()
