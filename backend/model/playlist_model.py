@@ -31,7 +31,6 @@ class SpotifyModel(PlaylistModel):
             ),
         )
     
-    @log_text
     def create_playlist(self, song_list: list[str], date: str) -> str:
         """Creates a playlist given a list of songs. Returns the link for that playlist."""
         songs_uri: list[str] = [self._get_song_link(song_name=song) for song in song_list]
