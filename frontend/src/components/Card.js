@@ -8,13 +8,15 @@ import Results from '../components/Results.js';
 
 
 function Card ({}) {
+
+    
     return (
         <div className="Card">
             <div className="card-inner-container">
                 <DateSelector />
-                {/* <SearchButton /> */}
+                <SearchButton />
                 {/* <Loader /> */}
-                <Results />
+                {/* <Results /> */}
             </div>
 
         </div>

@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './animations.css'
 
 import Card from './components/Card.js';
 import Logo from './components/Logo.js';
@@ -10,7 +11,6 @@ function App() {
     <div className="App">
 		<Logo />
 		<Card />
-
 		<Footer />
     </div>
   );

@@ -3,6 +3,9 @@
     justify-content: space-around;
     align-items: center;
     margin: 2rem auto;
+
+    animation-name: from-up;
+    animation-duration: 2s;
 }
 
 .Logo * {

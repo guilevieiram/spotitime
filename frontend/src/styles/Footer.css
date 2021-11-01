@@ -8,22 +8,27 @@
     right: 0;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .Footer p {
     color: white;
     font-size: 0.8rem;
-    margin: auto 5vw;
+    margin: auto 0 auto 5vw;
 }
 
 .links {
-    margin: 5px 5vw;
+    margin: 5px 5vw 3px 0;
 }
 
 .links * {
     height: 1.7rem;
     margin: 5px;
+    transition: 0.2s;
+}
+
+.links *:hover {
+    transform: translateY(-5px);
 }

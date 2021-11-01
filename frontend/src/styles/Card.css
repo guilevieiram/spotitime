@@ -1,7 +1,7 @@
 .Card {
     width: 90%;
     max-width: 40rem;
-    background: linear-gradient(to bottom left, rgba(201, 201, 201, 0.6), rgba(122, 122, 122, 0.4));
+    background: linear-gradient(to bottom left, rgba(201, 201, 201, 0.3), rgba(122, 122, 122, 0.2));
     border-radius: 2rem;
 
     min-height: 10rem;
@@ -11,6 +11,10 @@
 
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
 
+    animation-name: from-down;
+    animation-duration: 3s;
+
+    transition: 0.5s;
 }
 
 .card-inner-container {

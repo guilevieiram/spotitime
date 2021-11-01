@@ -16,6 +16,8 @@
     background-color: var(--highlight-color-green);
 
     filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.6));
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .button-fill p {
@@ -24,3 +26,4 @@
     font-size: 1rem;
     font-weight: bold;
 }
+

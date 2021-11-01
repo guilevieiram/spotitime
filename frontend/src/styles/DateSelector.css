@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .date-selector {
@@ -28,4 +29,6 @@
         sans-serif;
 
     font-size: 0.7rem;
+    cursor: pointer;
+
 }
