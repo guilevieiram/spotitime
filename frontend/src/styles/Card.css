@@ -1,0 +1,18 @@
+.Card {
+    width: 90%;
+    max-width: 40rem;
+    background: linear-gradient(to bottom left, rgba(201, 201, 201, 0.6), rgba(122, 122, 122, 0.4));
+    border-radius: 2rem;
+
+    min-height: 10rem;
+    max-width: 30rem;
+
+    margin: 5vh 2rem 0 2rem;
+
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+
+}
+
+.card-inner-container {
+    margin: 2rem;
+}

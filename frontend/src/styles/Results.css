@@ -1,0 +1,34 @@
+.Results {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playlist-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem auto;
+}
+
+.uri {
+    margin: 1rem auto;
+}
+
+.listen-button {
+    height: 2rem;
+    width: 13rem;
+
+    margin: 1rem auto;
+
+    border-style: solid;
+    border-color: var(--highlight-color-green);
+    border-radius: 5rem;
+    border-width: 3px;
+    background-color: var(--background-color);
+
+    font-weight: bolder;
+    font-size: 1rem;
+    color: var(--highlight-color-green);
+    
+}

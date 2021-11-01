@@ -1,0 +1,37 @@
+* {
+    --loader-size: 20px;
+    --loader-width: 3px;
+}
+
+.Loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    height: var(--loader-size);
+    width: var(--loader-size);
+
+    background: none;
+
+    border-style: solid;
+    border-radius: 50%;
+    border-width: var(--loader-width);
+    border-color: var(--highlight-color-green);
+    border-left-color: transparent;
+
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.35,.62,.87,.43); 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

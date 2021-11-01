@@ -1,0 +1,29 @@
+.Footer{
+    width: 100vw;
+    min-height: 2rem;
+    background-color: black;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Footer p {
+    color: white;
+    font-size: 0.8rem;
+    margin: auto 5vw;
+}
+
+.links {
+    margin: 5px 5vw;
+}
+
+.links * {
+    height: 1.7rem;
+    margin: 5px;
+}

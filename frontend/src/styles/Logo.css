@@ -1,0 +1,20 @@
+.Logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.Logo * {
+    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.6));
+}
+
+.logo-image {
+    height: 4rem;
+    margin: auto 1rem;
+}
+
+.name {
+    height: 2rem;
+    margin: auto 1rem;
+}
