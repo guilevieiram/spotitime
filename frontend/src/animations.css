@@ -19,3 +19,14 @@
         opacity: 1;
     }
 }
+
+@keyframes from-up-light {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }   
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

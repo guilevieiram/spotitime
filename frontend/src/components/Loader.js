@@ -1,9 +1,14 @@
 import React from 'react';
 import '../styles/Loader.css';
 
-function Loader ({}) {
+function Loader ({element}) {
     return (
-        <div className="Loader">
+        <div 
+            className="Loader" 
+            style={{
+                display: element === 'Loader' ? 'flex' : 'none'
+            }}
+        >
             <div className="circle"></div>
         </div>
     )

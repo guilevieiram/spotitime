@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 import re
 import json
 
+import time
+
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
@@ -78,14 +80,11 @@ class FlaskController(Controller):
         """Runs the application."""
         self.app.run(debug=True)
 
-        user_date: str = self._get_user_date()
-        song_list: list[str] = self._fetch_song_lists(date=user_date)
-        playlist_link: str = self._create_playlist(song_list=song_list, date=user_date)
-
     def _get_user_date(self) -> str:
         """Gets desired date from user"""
-        payload: dict = self.parser.parse_args()
-        user_input: str = payload.date
+        payload_string: str = request.data.decode('utf8')
+        payload: dict = json.loads(payload_string)
+        user_input: str = payload["date"]
         if not re.match("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", user_input):
             raise ValueError("Date in invalid format")
         return user_input
@@ -103,7 +102,34 @@ class FlaskController(Controller):
                     user_date: str = _get_user_date()
                     song_list: list[str] = _fetch_song_lists(date=user_date)
                     playlist_link: str = _create_playlist(song_list=song_list, date=user_date)
-                    return {"code": 1, "link": playlist_link}
+                    return {
+                        "code": 1,
+                        "link": playlist_link,
+                        "name": f"The best of {user_date}"
+                    }
+                except Exception as e:
+                    print(e)
+                    return {"code": -1, "message": f"The following exception occured: {e}"}
+        return _receive_user_date
+
+
+class FlaskDummyController(FlaskController):
+    """Dummy controller to test and develop the frontend application. Not for production."""
+
+    def _receive_user_date(self) -> Resource:
+        """Rewrites this method for dummy data usage."""
+        # creating pointers to the methods to be used inside the resouce class
+        _get_user_date = self._get_user_date
+        class _receive_user_date(Resource):
+            def post(self):
+                try:
+                    time.sleep(2)
+                    user_date: str = _get_user_date()
+                    return {
+                        "code": 1,
+                        "link": "https://guile.ga",
+                        "name": f"The best of {user_date}"
+                    }
                 except Exception as e:
                     print(e)
                     return {"code": -1, "message": f"The following exception occured: {e}"}

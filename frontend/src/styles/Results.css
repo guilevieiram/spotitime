@@ -3,6 +3,9 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+
+    animation-name: from-up-light;
+    animation-duration: 2s;
 }
 
 .playlist-name {
@@ -15,22 +18,35 @@
     margin: 1rem auto;
 }
 
-.listen-button {
+.listen-button, 
+.again-button
+{
     height: 2rem;
-    width: 13rem;
 
     margin: 1rem auto;
 
-    border-style: solid;
     border-color: var(--highlight-color-green);
     border-radius: 5rem;
     border-width: 3px;
-    background-color: var(--background-color);
 
     font-weight: bolder;
     font-size: 1rem;
-    color: var(--highlight-color-green);
 
     transition: 0.3s;
-    
+}
+
+
+.listen-button{
+    width: 13rem;
+    border: none;
+    background-color: var(--highlight-color-green);
+    color: black;
+}
+.again-button {
+    width: 8rem;
+    font-size: 0.8rem;
+    border-style: solid;
+    background-color: var(--background-color);
+    color: var(--highlight-color-green);
+
 }
