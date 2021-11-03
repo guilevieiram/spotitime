@@ -50,5 +50,6 @@
     border-style: solid;
     background-color: var(--background-color);
     color: var(--highlight-color-green);
+    margin: 3rem auto;
 
 }

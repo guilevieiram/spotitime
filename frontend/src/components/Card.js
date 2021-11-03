@@ -15,6 +15,7 @@ function Card ({}) {
         link: '',
         name: ''
     })
+    const reset = () => setElement(elements[0]);
 
     async function request(url, date) {
         const endPoint = url;
@@ -55,6 +56,7 @@ function Card ({}) {
                 <Results 
                     element={element}
                     APIresponse={APIresponse}
+                    reset={reset}
                 />
             </div>
 
