@@ -6,7 +6,7 @@ import InfoBubble from './InfoBubble.js';
 
 function DateSelector ({element, request}) {
 
-    const [date, setDate] = useState("2000-01-01");
+    const [date, setDate] = useState("1999-12-31");
     const [showInfo, setShowInfo] = useState(false);
 
     const handleSubmit = (event) => {

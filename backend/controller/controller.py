@@ -47,8 +47,8 @@ class TerminalController(Controller):
         """Runs the application."""
         user_date: str = self._get_user_date()
         song_list: list[str] = self._fetch_song_lists(date=user_date)
-        playlist_link: str = self._create_playlist(song_list=song_list, date=user_date)
-        print(f"Your desired playlist is in the following link: \n\t {playlist_link}")
+        playlist_uri: str = self._create_playlist(song_list=song_list, date=user_date)
+        print(f"Your desired playlist is in the following link: \n\t {playlist_uri}")
 
     def _get_user_date(self) -> str:
         """Gets desired date from user"""
@@ -101,10 +101,10 @@ class FlaskController(Controller):
                 try:
                     user_date: str = _get_user_date()
                     song_list: list[str] = _fetch_song_lists(date=user_date)
-                    playlist_link: str = _create_playlist(song_list=song_list, date=user_date)
+                    playlist_uri: str = _create_playlist(song_list=song_list, date=user_date)
                     return {
                         "code": 1,
-                        "link": playlist_link,
+                        "uri": playlist_uri,
                         "name": f"The best of {user_date}"
                     }
                 except Exception as e:
@@ -127,7 +127,7 @@ class FlaskDummyController(FlaskController):
                     user_date: str = _get_user_date()
                     return {
                         "code": 1,
-                        "link": "https://guile.ga",
+                        "uri": "spotify:track:4cOdK2wGLETKBW3PvgPWqT",
                         "name": f"The best of {user_date}"
                     }
                 except Exception as e:

@@ -8,8 +8,9 @@ import spotifyUriTest from '../assets/spotify_uri_test.png';
 function Results ({element, APIresponse}) {
 
     const responseCode = APIresponse.code;
-    const [showError, setShowError] = useState(responseCode === -1)
-
+    const [showError, setShowError] = useState(responseCode === -1 || responseCode === 0)
+    const qrCodeLink = `https://scannables.scdn.co/uri/plain/png/000000/white/640/${APIresponse.uri}`
+    
     return (
         <div 
             className="Results"
@@ -30,8 +31,8 @@ function Results ({element, APIresponse}) {
                 }}
             >
                 <p className="playlist-name">{APIresponse.name}</p>
-                <img src={spotifyUriTest} alt="URI" className="uri" />
-                <a href={APIresponse.link}><button className="listen-button">Listen</button></a>
+                <a href={APIresponse.uri}><img src={qrCodeLink} alt="URI" className="uri" /></a>
+                <a href={APIresponse.uri}><button className="listen-button">Listen</button></a>
             </div>
             <a href="/"><button className="again-button">Try again!</button></a>
         </div>

@@ -16,6 +16,8 @@
 
 .uri {
     margin: 1rem auto;
+    height: 5rem;
+    border-radius: 2rem;
 }
 
 .listen-button, 
