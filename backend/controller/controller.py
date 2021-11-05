@@ -4,7 +4,7 @@ import json
 
 import time
 
-from flask import Flask, jsonify, request
+from flask import Flask, request, jsonify, abort
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 
@@ -134,3 +134,50 @@ class FlaskDummyController(FlaskController):
                     print(e)
                     return {"code": -1, "message": f"The following exception occured: {e}"}
         return _receive_user_date
+
+
+class FlaskSimpleController(Controller):
+    """Responsible for controlling the application via a simple Flask API."""
+
+    def __init__(self, ranks_model: RanksModel, playlist_model: PlaylistModel) -> None:
+        """Initializes the API and its endpoints"""
+        self.ranks_model = ranks_model
+        self.playlist_model = playlist_model
+        self.app: Flask = Flask(__name__)
+        self._receive_user_date()
+
+    def run(self) -> None:
+        """Runs the application."""
+        self.app.run(debug=True, port=4000)
+
+    def _get_user_date(self) -> str:
+        """Gets desired date from user"""
+        if not request.json or not 'date' in request.json:
+            abort(400)
+        user_input: str = request.json["date"]
+        if not re.match("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", user_input):
+            raise ValueError("Date in invalid format")
+        return user_input
+    
+    def _receive_user_date(self) -> None:
+        """Defines the api endpoint to receive user date as an api POST endpoint."""
+        # creating pointers to the methods to be used inside the resouce class
+        _get_user_date = self._get_user_date
+        _fetch_song_lists = self._fetch_song_lists
+        _create_playlist = self._create_playlist
+        app = self.app 
+
+        @app.route("/", methods=["POST"])
+        def post() -> str:
+            try:
+                user_date: str = _get_user_date()
+                song_list: list[str] = _fetch_song_lists(date=user_date)
+                playlist_uri: str = _create_playlist(song_list=song_list, date=user_date)
+                return {
+                    "code": 1,
+                    "uri": playlist_uri,
+                    "name": f"The best of {user_date}"
+                }
+            except Exception as e:
+                print(e)
+                return {"code": -1, "message": f"The following exception occured: {e}"}
