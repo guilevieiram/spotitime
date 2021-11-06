@@ -21,7 +21,10 @@
     background-color: var(--background-color);
 
     cursor: pointer;
+    -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.6));
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.6));
+
+    margin: 3px 10px 10px 3px;
 }
 
 .date-selector-form {
