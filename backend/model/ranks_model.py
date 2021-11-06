@@ -2,9 +2,6 @@ from abc import ABC, abstractmethod
 import requests
 from bs4 import BeautifulSoup
 
-from helpers.decorators import log_json, log_text
-
-
 class RanksModel(ABC):
     """Responsible for connecting and managing the webscrapping of the billboard application"""
 

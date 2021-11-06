@@ -3,9 +3,6 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-from helpers.decorators import log_json, log_text
-
-
 class PlaylistModel(ABC):
     """Responsible for connecting and managing the spotify api."""
 
