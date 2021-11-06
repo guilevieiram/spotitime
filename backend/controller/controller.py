@@ -69,7 +69,7 @@ class FlaskController(Controller):
         self.playlist_model = playlist_model
 
         self.app: Flask = Flask(__name__)
-        CORS(self.app)
+        cors = CORS(self.app, resources={r"/api/*": {"origins": "*"}})
         self.api: Api = Api(self.app)
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('date')
