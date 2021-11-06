@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 5rem;
     overflow: hidden;
 }
@@ -27,6 +28,11 @@
     animation-duration: 1000ms;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.35,.62,.87,.43); 
+}
+
+.Loader p {
+    font-size: 0.8rem;
+    margin-top: 1rem;
 }
 
 @keyframes spin {

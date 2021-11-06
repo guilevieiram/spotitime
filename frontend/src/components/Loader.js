@@ -10,6 +10,7 @@ function Loader ({element}) {
             }}
         >
             <div className="circle"></div>
+            <p>Wait while we create your playlist! This might take a minute ...</p>
         </div>
     )
 }
