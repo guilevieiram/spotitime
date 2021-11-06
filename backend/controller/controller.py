@@ -75,6 +75,7 @@ class FlaskController(Controller):
         self.parser.add_argument('date')
 
         self.api.add_resource(self._receive_user_date(), '/')
+        self.api.add_resource(self._sanity_test(), '/test')
 
     def run(self) -> None:
         """Runs the application."""
@@ -111,7 +112,16 @@ class FlaskController(Controller):
                     print(e)
                     return {"code": -1, "message": f"The following exception occured: {e}"}
         return _receive_user_date
-
+    
+    def _sanity_test(self) -> Resource:
+        """Defines an api endpoint to check if the server ir running fine and well."""
+        class _sanity_test(Resource):
+            def get(self):
+                return {
+                    "code": 1,
+                    "message": "all good here!!"
+                }       
+        return _sanity_test         
 
 class FlaskDummyController(FlaskController):
     """Dummy controller to test and develop the frontend application. Not for production."""

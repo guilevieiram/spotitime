@@ -23,13 +23,9 @@ function Card ({}) {
         const data = {
             date: date
         }
-        const header = {
-            "Access-Control-Allow-Origin": apiURL
-        }
         const parameters = {
             method: 'POST',
             body: JSON.stringify(data),
-            header: JSON.stringify(header)
         };
     
         setElement(elements[1])
