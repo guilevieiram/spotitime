@@ -28,7 +28,7 @@ class SpotifyModel(PlaylistModel):
             ),
         )
     
-    def create_playlist(self, song_list: list[str], date: str) -> str:
+    def create_playlist(self, song_list: list[str], date: str) -> [str, str]:
         """Creates a playlist given a list of songs. Returns the uri for that playlist."""
         songs_uri: list[str] = [self._get_song_link(song_name=song) for song in song_list]
         playlist_data: dict = self.man.user_playlist_create(user=self.man.me()["id"], name=f"The Best Of   {date}")
@@ -36,7 +36,8 @@ class SpotifyModel(PlaylistModel):
             playlist_id=playlist_data["id"],
             items=songs_uri
         )
-        return playlist_data["uri"]
+        print(playlist_data)
+        return playlist_data["uri"], playlist_data["external_urls"]["spotify"]
 
     def _get_song_link(self, song_name: str) -> str:
         """Returns a song link(uri) given a song name."""

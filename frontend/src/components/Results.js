@@ -6,8 +6,10 @@ import InfoBubble from './InfoBubble.js';
 function Results ({element, APIresponse, reset}) {
 
     const responseCode = APIresponse.code;
-    const [showError, setShowError] = useState(responseCode != 1)
+    const [showError, setShowError] = useState((responseCode === -1 || responseCode === 0))
     const qrCodeLink = `https://scannables.scdn.co/uri/plain/png/000000/white/640/${APIresponse.uri}`
+
+    console.log(APIresponse)
     
     return (
         <div 
@@ -30,7 +32,7 @@ function Results ({element, APIresponse, reset}) {
             >
                 <p className="playlist-name">{APIresponse.name}</p>
                 <a href={APIresponse.uri}><img src={qrCodeLink} alt="URI" className="uri" /></a>
-                <a href={APIresponse.uri}><button className="listen-button">Listen</button></a>
+                <a href={APIresponse.url}><button className="listen-button">Listen</button></a>
             </div>
             <button 
                 className="again-button"

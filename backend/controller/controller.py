@@ -102,10 +102,11 @@ class FlaskController(Controller):
                 try:
                     user_date: str = _get_user_date()
                     song_list: list[str] = _fetch_song_lists(date=user_date)
-                    playlist_uri: str = _create_playlist(song_list=song_list, date=user_date)
+                    playlist_uri, playlist_url = _create_playlist(song_list=song_list, date=user_date)
                     return {
                         "code": 1,
                         "uri": playlist_uri,
+                        "url": playlist_url,
                         "name": f"The best of {user_date}"
                     }
                 except Exception as e:
@@ -138,6 +139,7 @@ class FlaskDummyController(FlaskController):
                     return {
                         "code": 1,
                         "uri": "spotify:track:4cOdK2wGLETKBW3PvgPWqT",
+                        "url": "https://google.com",
                         "name": f"The best of {user_date}"
                     }
                 except Exception as e:
@@ -187,11 +189,12 @@ class FlaskSimpleController(Controller):
                 print("Contorller: received user date: ", user_date)
                 song_list: list[str] = _fetch_song_lists(date=user_date)
                 print("Contorller: fetched songs list: ", song_list)
-                playlist_uri: str = _create_playlist(song_list=song_list, date=user_date)
+                playlist_uri, playlist_url = _create_playlist(song_list=song_list, date=user_date)
                 print("Contorller: playlist created! Returning")
                 return {
                     "code": 1,
                     "uri": playlist_uri,
+                    "url": playlist_url,
                     "name": f"The best of {user_date}"
                 }
             except Exception as e:
