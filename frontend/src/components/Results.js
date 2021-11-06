@@ -3,12 +3,10 @@ import '../styles/Results.css';
 
 import InfoBubble from './InfoBubble.js';
 
-import spotifyUriTest from '../assets/spotify_uri_test.png';
-
 function Results ({element, APIresponse, reset}) {
 
     const responseCode = APIresponse.code;
-    const [showError, setShowError] = useState(responseCode !== 1)
+    const [showError, setShowError] = useState(responseCode != 1)
     const qrCodeLink = `https://scannables.scdn.co/uri/plain/png/000000/white/640/${APIresponse.uri}`
     
     return (

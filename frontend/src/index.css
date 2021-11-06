@@ -5,7 +5,7 @@
 * {
   margin: 0;
   border: none;
-
+  overflow-x: hidden;
 }
 
 * {

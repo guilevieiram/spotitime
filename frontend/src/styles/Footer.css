@@ -4,13 +4,14 @@
     background-color: black;
 
     position: absolute;
-    bottom: 0;
+    top: 100vh;
     right: 0;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    margin: 0;
 }
 
 .Footer p {
