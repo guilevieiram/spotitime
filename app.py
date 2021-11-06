@@ -6,4 +6,3 @@ app = FlaskSimpleController(
     ranks_model=BillboardModel(),
     playlist_model=SpotifyModel()
 ).app
-app.run()
