@@ -7,7 +7,7 @@ class RanksModel(ABC):
 
     def fetch_songs(self, date: str) -> list[str]:
         """Method to be accessed by the controller to fetch the songs list given a date."""
-        return self._parse_song_names(page_html=self._fetch_page(date=date))[:10]
+        return self._parse_song_names(page_html=self._fetch_page(date=date))
 
     @abstractmethod
     def _fetch_page(self, date: str) -> str:

@@ -145,6 +145,7 @@ class FlaskSimpleController(Controller):
         self.playlist_model = playlist_model
         self.app: Flask = Flask(__name__)
         self._receive_user_date()
+        self._sanity_test()
 
     def run(self) -> None:
         """Runs the application."""
