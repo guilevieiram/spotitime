@@ -43,6 +43,19 @@ function Card ({}) {
         });
     }
 
+    async function sanityCheck(url) {
+        const endPoint = url + "test";
+        const parameters = {
+            method: 'GET'
+        };
+        await fetch(endPoint, parameters)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+    }
+
+    sanityCheck('https://spotitime.herokuapp.com');
+
     return (
         <div className="Card">
             <div className="card-inner-container">
