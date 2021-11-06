@@ -6,7 +6,7 @@ import InfoBubble from './InfoBubble.js';
 function Results ({element, APIresponse, reset}) {
 
     const responseCode = APIresponse.code;
-    const [showError, setShowError] = useState((responseCode === -1 || responseCode === 0))
+    const [showError, setShowError] = useState(responseCode === -1)
     const qrCodeLink = `https://scannables.scdn.co/uri/plain/png/000000/white/640/${APIresponse.uri}`
 
     console.log(APIresponse)
