@@ -8,8 +8,8 @@ from flask import Flask, request, jsonify, abort
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 
-from model.playlist_model import PlaylistModel
-from model.ranks_model import RanksModel
+from backend.model.playlist_model import PlaylistModel
+from backend.model.ranks_model import RanksModel
 
 
 class Controller(ABC):
