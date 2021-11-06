@@ -10,7 +10,7 @@ class RanksModel(ABC):
 
     def fetch_songs(self, date: str) -> list[str]:
         """Method to be accessed by the controller to fetch the songs list given a date."""
-        return self._parse_song_names(page_html=self._fetch_page(date=date))
+        return self._parse_song_names(page_html=self._fetch_page(date=date))[:10]
 
     @abstractmethod
     def _fetch_page(self, date: str) -> str:
@@ -29,10 +29,6 @@ class BillboardModel(RanksModel):
     def __init__(self, url: str = "https://www.billboard.com/charts/hot-100/") -> None:
         """Initializes the billboard model with the necessary endpoint url."""
         self.base_url: str = url
-
-    def fetch_songs(self, date: str) -> list[str]:
-        """Method to be accessed by the controller to fetch the songs list given a date."""
-        return self._parse_song_names(page_html=self._fetch_page(date=date))
 
     def _fetch_page(self, date: str) -> str:
         """Fetches the billboard 100 page for a given date"""

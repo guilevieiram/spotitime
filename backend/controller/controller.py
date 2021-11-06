@@ -168,11 +168,16 @@ class FlaskSimpleController(Controller):
         app = self.app 
 
         @app.route("/", methods=["POST"])
-        def post() -> str:
+        def _receive_user_date() -> str:
+            print("Contorller: received request")
+
             try:
                 user_date: str = _get_user_date()
+                print("Contorller: received user date: ", user_date)
                 song_list: list[str] = _fetch_song_lists(date=user_date)
+                print("Contorller: fetched songs list: ", song_list)
                 playlist_uri: str = _create_playlist(song_list=song_list, date=user_date)
+                print("Contorller: playlist created! Returning")
                 return {
                     "code": 1,
                     "uri": playlist_uri,
@@ -181,3 +186,13 @@ class FlaskSimpleController(Controller):
             except Exception as e:
                 print(e)
                 return {"code": -1, "message": f"The following exception occured: {e}"}
+    
+    def _sanity_test(self) -> None:
+        """Defines an api endpoint to check if the server ir running fine and well."""
+        app = self.app
+        @app.route("/test")
+        def _sanity_test() -> str:
+            return {
+                "code": 1,
+                "message": "all good here!!"
+            }

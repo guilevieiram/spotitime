@@ -4,14 +4,14 @@ import './animations.css'
 
 import Card from './components/Card.js';
 import Logo from './components/Logo.js';
-import Footer from './components/Footer.js'
+import Footer from './components/Footer.js';
 
 function App() {
   return (
     <div className="App">
-		<Logo />
-		<Card />
-		<Footer />
+      <Logo />
+      <Card />
+      <Footer />
     </div>
   );
 }
