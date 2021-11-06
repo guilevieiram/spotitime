@@ -26,6 +26,7 @@ function Card ({}) {
         const parameters = {
             method: 'POST',
             body: JSON.stringify(data),
+            headers: {'Content-Type':'application/json'}
         };
     
         setElement(elements[1])
@@ -47,7 +48,8 @@ function Card ({}) {
     (async function sanityCheck() {
         const endPoint = apiURL + "test";
         const parameters = {
-            method: 'GET'
+            method: 'GET',
+            headers: {'Content-Type':'application/json'}
         };
         await fetch(endPoint, parameters)
         .then(response => response.json())
