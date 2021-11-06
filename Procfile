@@ -1,1 +1,1 @@
-web: gunicorn backend.test_app:app -t 0
+web: gunicorn backend.app:app -t 0
