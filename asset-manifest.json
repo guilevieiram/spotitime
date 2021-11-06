@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/spotitime/static/css/main.9b70924b.chunk.css",
-    "main.js": "/spotitime/static/js/main.f13541de.chunk.js",
-    "main.js.map": "/spotitime/static/js/main.f13541de.chunk.js.map",
+    "main.js": "/spotitime/static/js/main.90409c24.chunk.js",
+    "main.js.map": "/spotitime/static/js/main.90409c24.chunk.js.map",
     "runtime-main.js": "/spotitime/static/js/runtime-main.3f12f4e9.js",
     "runtime-main.js.map": "/spotitime/static/js/runtime-main.3f12f4e9.js.map",
     "static/js/2.196027dc.chunk.js": "/spotitime/static/js/2.196027dc.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.3f12f4e9.js",
     "static/js/2.196027dc.chunk.js",
     "static/css/main.9b70924b.chunk.css",
-    "static/js/main.f13541de.chunk.js"
+    "static/js/main.90409c24.chunk.js"
   ]
 }
