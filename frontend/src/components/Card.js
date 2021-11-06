@@ -16,15 +16,20 @@ function Card ({}) {
         name: ''
     })
     const reset = () => setElement(elements[0]);
+    const apiURL = 'https://spotitime.herokuapp.com/';
 
-    async function request(url, date) {
-        const endPoint = url;
+    async function request(date) {
+        const endPoint = apiURL;
         const data = {
             date: date
         }
+        const header = {
+            "Access-Control-Allow-Origin": apiURL
+        }
         const parameters = {
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            header: JSON.stringify(header)
         };
     
         setElement(elements[1])
@@ -43,8 +48,8 @@ function Card ({}) {
         });
     }
 
-    async function sanityCheck(url) {
-        const endPoint = url + "test";
+    (async function sanityCheck() {
+        const endPoint = apiURL + "test";
         const parameters = {
             method: 'GET'
         };
@@ -52,9 +57,8 @@ function Card ({}) {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.log(error));
-    }
+    })();
 
-    sanityCheck('https://spotitime.herokuapp.com');
 
     return (
         <div className="Card">

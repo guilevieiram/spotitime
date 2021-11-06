@@ -12,7 +12,7 @@ function DateSelector ({element, request}) {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(event.target.value)
-        const response = request('http://127.0.0.1:5000/', date)
+        const response = request(date)
         console.log(response)
     }
     const onChange = (event) => {
