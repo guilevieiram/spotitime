@@ -16,7 +16,8 @@
 
 .uri {
     margin: 1rem auto;
-    height: 5rem;
+    max-height: 5rem;
+    max-width: 100%;
     border-radius: 2rem;
 }
 

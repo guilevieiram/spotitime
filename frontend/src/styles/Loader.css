@@ -8,8 +8,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 5rem;
     overflow: hidden;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .circle {
