@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/spotitime/static/css/main.73ed9fee.chunk.css",
+    "main.css": "/spotitime/static/css/main.ba1bd471.chunk.css",
     "main.js": "/spotitime/static/js/main.160781d2.chunk.js",
     "main.js.map": "/spotitime/static/js/main.160781d2.chunk.js.map",
     "runtime-main.js": "/spotitime/static/js/runtime-main.3f12f4e9.js",
@@ -10,7 +10,7 @@
     "static/js/3.e34a6be5.chunk.js": "/spotitime/static/js/3.e34a6be5.chunk.js",
     "static/js/3.e34a6be5.chunk.js.map": "/spotitime/static/js/3.e34a6be5.chunk.js.map",
     "index.html": "/spotitime/index.html",
-    "static/css/main.73ed9fee.chunk.css.map": "/spotitime/static/css/main.73ed9fee.chunk.css.map",
+    "static/css/main.ba1bd471.chunk.css.map": "/spotitime/static/css/main.ba1bd471.chunk.css.map",
     "static/js/2.196027dc.chunk.js.LICENSE.txt": "/spotitime/static/js/2.196027dc.chunk.js.LICENSE.txt",
     "static/media/github.a855c397.png": "/spotitime/static/media/github.a855c397.png",
     "static/media/gmail.a2f2146f.png": "/spotitime/static/media/gmail.a2f2146f.png",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.3f12f4e9.js",
     "static/js/2.196027dc.chunk.js",
-    "static/css/main.73ed9fee.chunk.css",
+    "static/css/main.ba1bd471.chunk.css",
     "static/js/main.160781d2.chunk.js"
   ]
 }
