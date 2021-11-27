@@ -30,13 +30,15 @@ class SpotifyModel(PlaylistModel):
     
     def create_playlist(self, song_list: list[str], date: str) -> [str, str]:
         """Creates a playlist given a list of songs. Returns the uri for that playlist."""
+        print(song_list)
         songs_uri: list[str] = [self._get_song_link(song_name=song) for song in song_list]
-        playlist_data: dict = self.man.user_playlist_create(user=self.man.me()["id"], name=f"The Best Of   {date}")
+        playlist_data: dict = self.man.user_playlist_create(
+            user=self.man.me()["id"],
+            name=f"The Best Of   {date}")
         self.man.playlist_add_items(
             playlist_id=playlist_data["id"],
             items=songs_uri
         )
-        print(playlist_data)
         return playlist_data["uri"], playlist_data["external_urls"]["spotify"]
 
     def _get_song_link(self, song_name: str) -> str:
@@ -45,5 +47,6 @@ class SpotifyModel(PlaylistModel):
         try:
             song_uri: str = response["tracks"]["items"][0]["uri"]
         except IndexError:
-            song_uri: str = "spotify:track:4cOdK2wGLETKBW3PvgPWqT" # this returns "never gonna give you up as exception"
+            song_uri: str = "spotify:track:4cOdK2wGLETKBW3PvgPWqT" 
+            # this returns "never gonna give you up as exception"
         return song_uri

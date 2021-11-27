@@ -34,7 +34,7 @@ class BillboardModel(RanksModel):
     def _parse_song_names(self, page_html: str) -> list[str]:
         """Given a content page, fetches all the song names and returns them in a list."""
         soup: BeautifulSoup = BeautifulSoup(page_html, "html.parser")
-        tag_list: list = soup.select(".chart-element__information__song")
+        tag_list: list = soup.select("#title-of-a-story.a-no-trucate")
         song_names_list: list[str] = list(map(lambda tag: tag.string, tag_list))
         return song_names_list
 
